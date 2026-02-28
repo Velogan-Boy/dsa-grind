@@ -1,0 +1,13 @@
+# Last updated: 2/28/2026, 4:27:42 PM
+class Solution:
+    def isAnagram(self, s, t):
+
+        if(len(s) != len(t)): return False
+
+        freq = [0] * 26
+
+        for i in range(len(s)):
+            freq[ord(s[i]) - ord('a')] +=1
+            freq[ord(t[i]) - ord('a')] -=1
+
+        return all(x == 0 for x in freq)
