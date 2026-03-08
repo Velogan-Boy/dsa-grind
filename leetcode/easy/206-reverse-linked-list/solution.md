@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/reverse-linked-list/submissions/1941995830/
+- **URL:** https://leetcode.com/problems/reverse-linked-list/submissions/1942017579/
 - **Date:** 2026-03-08
 
 ## Solution
@@ -17,16 +17,18 @@
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        prev, curr = None, head
-
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
+        if not head or not head.next:
+            return head
         
+        newHead = self.reverseList(head.next)
+        
+        front = head.next
+        front.next = head
+        head.next = None
+        
+        return newHead
 
-        return prev
+
         
 
 
