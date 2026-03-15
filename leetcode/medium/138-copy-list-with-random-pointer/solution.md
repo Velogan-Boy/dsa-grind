@@ -3,45 +3,63 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/copy-list-with-random-pointer/submissions/1948994706/
+- **URL:** https://leetcode.com/problems/copy-list-with-random-pointer/submissions/1949001390/
 - **Date:** 2026-03-15
 
 ## Solution
 
 ```python
-"""
-# Definition for a Node.
-class Node:
-    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
-        self.val = int(x)
-        self.next = next
-        self.random = random
-"""
+# class ListNode:
+#     def __init__(self, val=0, next=None, random=None):
+#         self.val = val
+#         self.next = next
+#         self.random = random
 
 class Solution:
-    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
-        if not head:
-            return None
-
-        mpp = {}
+    def insertCopyInBetween(self, head):
         temp = head
+        while temp:
+            nextElement = temp.next
+            copy = ListNode(temp.val)
+            
+            copy.next = nextElement
+            temp.next = copy
+            temp = nextElement
+
+    def connectRandomPointers(self, head):
+        temp = head
+        while temp:
+            copyNode = temp.next
+            
+            if temp.random:
+                copyNode.random = temp.random.next
+            else:
+                copyNode.random = None
+            
+            temp = temp.next.next
+
+    def getDeepCopyList(self, head):
+        temp = head
+        dummyNode = ListNode(-1)
+        res = dummyNode
 
         while temp:
-            newNode = ListNode(temp.val)
-            mpp[temp] = newNode
+            res.next = temp.next
+            res = res.next
+
+            temp.next = temp.next.next
             temp = temp.next
-
-        temp = head
-
-        while temp:
-            copyNode = mpp[temp]
-            copyNode.next = mpp.get(temp.next)
-            copyNode.random = mpp.get(temp.random)
-            temp = temp.next
-
-        return mpp[head]
-
         
+        return dummyNode.next
+
+    def copyRandomList(self, head):
+        if not head: return None
+
+        self.insertCopyInBetween(head)
+        self.connectRandomPointers(head)
+        return self.getDeepCopyList(head)
+
+
 ```
 
 ---
