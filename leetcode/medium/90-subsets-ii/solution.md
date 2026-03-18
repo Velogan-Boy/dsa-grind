@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/subsets-ii/submissions/1952031153/
+- **URL:** https://leetcode.com/problems/subsets-ii/submissions/1952038792/
 - **Date:** 2026-03-18
 
 ## Solution
@@ -24,7 +24,7 @@ class Solution:
                 self.func(j, arr, nums, ans)
                 return
         
-        self.func(len(nums), arr, nums, ans)
+        ans.append(arr.copy())
     
     def subsetsWithDup(self, nums):
         ans = [] 
