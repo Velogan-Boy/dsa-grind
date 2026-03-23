@@ -3,43 +3,25 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/remove-k-digits/submissions/1957105968/
+- **URL:** https://leetcode.com/problems/remove-k-digits/
 - **Date:** 2026-03-23
 
 ## Solution
 
 ```python
 class Solution:
-    def removeKdigits(self, nums: str, k: int) -> str:
-        st = []
+    def removeKdigits(self, num: str, k: int) -> str:
+        stack = []
+        for i in num:
+            while stack and stack[-1] > i and k > 0:
+                k -= 1
+                stack.pop()
+            if stack or i is not "0":
+                stack.append(i)
+        if k:
+            stack = stack[:-k]
+        return ''.join(stack) or '0'
         
-        for digit in nums:
-            while st and k > 0 and st[-1] > digit:
-                st.pop() 
-                k -= 1 
-            
-            st.append(digit)
-        
-        while st and k > 0:
-            st.pop() 
-            k -= 1 
-        
-        if not st:
-            return "0"
-        
-        res = ""
-        
-        while st:
-            res += st.pop()
-        
-        res = res.rstrip('0')
-        
-        res = res[::-1]
-        
-        if not res:
-            return "0"
-        
-        return res
 
 ```
 
