@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/asteroid-collision/submissions/1956916317/
+- **URL:** https://leetcode.com/problems/asteroid-collision/submissions/1957087997/
 - **Date:** 2026-03-23
 
 ## Solution
@@ -11,25 +11,26 @@
 ```python
 class Solution:
     def asteroidCollision(self, asteroids):
-        
+    
         n = len(asteroids)
-        st = []
+        stack = []
         
-        for i in range(n):
-            if asteroids[i] > 0:
-                st.append(asteroids[i])
-            else:
-                while (st and st[-1] > 0 and 
-                       st[-1] < abs(asteroids[i])):
-                    st.pop()
-                
-                if st and st[-1] == abs(asteroids[i]):
-                    st.pop()
-                
-                elif not st or st[-1] < 0:
-                    st.append(asteroids[i])
-        
-        return st
+        for a in asteroids:
+            while stack and a < 0 and stack[-1] > 0:
+                diff = a + stack[-1]
+
+                if diff < 0:
+                    stack.pop()
+                elif diff > 0:
+                    a = 0
+                else:
+                    stack.pop()
+                    a = 0
+
+            if a: stack.append(a)
+
+        return stack
+
 ```
 
 ---
