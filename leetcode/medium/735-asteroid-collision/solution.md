@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/asteroid-collision/submissions/1957087997/
+- **URL:** https://leetcode.com/problems/asteroid-collision/submissions/1957088285/
 - **Date:** 2026-03-23
 
 ## Solution
