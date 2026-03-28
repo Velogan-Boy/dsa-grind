@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/max-consecutive-ones-iii/submissions/1958012975/
-- **Date:** 2026-03-24
+- **URL:** https://leetcode.com/problems/max-consecutive-ones-iii/
+- **Date:** 2026-03-28
 
 ## Solution
 
@@ -19,9 +19,8 @@ class Solution:
         while r < n:
             if nums[r] == 0: zeroes+=1
 
-            while zeroes > k:
+            if zeroes > k:
                 if nums[l] == 0: zeroes-=1
-                l+=1
 
             ans = max(ans, r - l + 1)
             r+=1
