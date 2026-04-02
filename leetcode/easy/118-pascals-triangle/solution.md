@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/pascals-triangle/submissions/1967096690/
+- **URL:** https://leetcode.com/problems/pascals-triangle/submissions/1967097668/
 - **Date:** 2026-04-02
 
 ## Solution
