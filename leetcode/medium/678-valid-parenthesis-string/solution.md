@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/valid-parenthesis-string/submissions/1964730637/
-- **Date:** 2026-03-31
+- **URL:** https://leetcode.com/problems/valid-parenthesis-string/submissions/1968868153/
+- **Date:** 2026-04-04
 
 ## Solution
 
@@ -24,6 +24,7 @@ class Solution:
                 return False
             if leftMin < 0:  # required because -> s = ( * ) (
                 leftMin = 0
+                
         return leftMin == 0
 ```
 
