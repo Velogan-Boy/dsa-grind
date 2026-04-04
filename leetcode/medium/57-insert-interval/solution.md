@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/insert-interval/submissions/1968806310/
+- **URL:** https://leetcode.com/problems/insert-interval/submissions/1968828900/
 - **Date:** 2026-04-04
 
 ## Solution
@@ -12,31 +12,27 @@
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
 
-        if not intervals: return [newInterval]
-
-        merged = []
-
-        inserted = 0
-        for start,end  in intervals:
-            if start > newInterval[0] and inserted == 0:
-                merged.append(newInterval)
-                inserted = 1
-            
-            merged.append([start,end])
-
-        if inserted == 0: merged.append(newInterval)
-
-        ans = merged[0:1]
-        for i in range(1, len(merged)):
-            if ans[-1][1] >= merged[i][0]:
-                ans[-1][0] = min(ans[-1][0], merged[i][0]) 
-                ans[-1][1] = max(ans[-1][1], merged[i][1])  
-            else:
-                ans.append(merged[i])
-
-
-        return ans
-            
+        res = []
+        i = 0
+        
+        n = len(intervals)
+        
+        while i < n and intervals[i][1] < newInterval[0]:
+            res.append(intervals[i])
+            i += 1
+        
+        while i < n and intervals[i][0] <= newInterval[1]:
+            newInterval[0] = min(newInterval[0], intervals[i][0])
+            newInterval[1] = max(newInterval[1], intervals[i][1])
+            i += 1
+        
+        res.append(newInterval)
+        
+        while i < n:
+            res.append(intervals[i])
+            i += 1
+        
+        return res
 
         
 ```
