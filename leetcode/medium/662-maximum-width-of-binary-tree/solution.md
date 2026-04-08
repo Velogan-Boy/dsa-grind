@@ -3,15 +3,12 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/maximum-width-of-binary-tree/submissions/1972920964/
+- **URL:** https://leetcode.com/problems/maximum-width-of-binary-tree/submissions/1972921480/
 - **Date:** 2026-04-08
 
 ## Solution
 
 ```python
-from collections import deque
-from math import inf
-
 class Solution:
     def widthOfBinaryTree(self, root):
         q = deque([(root, 0)]) 
