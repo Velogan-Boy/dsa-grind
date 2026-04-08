@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/1972883654/
+- **URL:** https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/1972890722/
 - **Date:** 2026-04-08
 
 ## Solution
@@ -11,16 +11,25 @@
 ```python
 class Solution:
     def lowestCommonAncestor(self, root, p, q):
-        if not root or root == p or root == q:
-            return root
+        ans = None
 
-        left = self.lowestCommonAncestor(root.left, p, q)
-        right = self.lowestCommonAncestor(root.right, p, q)
+        def traverse(node):
+            nonlocal ans
+            if not node:
+                return False
 
-        if left and right:
-            return root
+            left = traverse(node.left)
+            right = traverse(node.right)
 
-        return left if left else right
+            mid = (node == p or node == q)
+
+            if mid + left + right >= 2:
+                ans = node
+
+            return mid or left or right
+
+        traverse(root)
+        return ans
 ```
 
 ---
