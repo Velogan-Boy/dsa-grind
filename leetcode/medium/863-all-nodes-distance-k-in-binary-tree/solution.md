@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/submissions/1972943889/
+- **URL:** https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/submissions/1972944005/
 - **Date:** 2026-04-08
 
 ## Solution
