@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/maximum-width-of-binary-tree/submissions/1972920556/
+- **URL:** https://leetcode.com/problems/maximum-width-of-binary-tree/submissions/1972920964/
 - **Date:** 2026-04-08
 
 ## Solution
