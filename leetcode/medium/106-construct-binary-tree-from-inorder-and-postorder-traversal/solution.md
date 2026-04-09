@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+- **URL:** https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/submissions/1973285508/
 - **Date:** 2026-04-09
 
 ## Solution
