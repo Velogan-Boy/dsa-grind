@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/delete-node-in-a-bst/submissions/1975182392/
+- **URL:** https://leetcode.com/problems/delete-node-in-a-bst/submissions/1975184151/
 - **Date:** 2026-04-11
 
 ## Solution
@@ -23,19 +23,26 @@ class Solution:
         else:
             if not root.left:
                 return root.right
+
             if not root.right:
                 return root.left
 
-            successor = self.findMin(root.right)
-            root.val = successor.val
-            root.right = self.deleteNode(root.right, successor.val)
+            successor = root.right
+            parent = root
+
+            while successor.left:
+                parent = successor
+                successor = successor.left
+
+            if parent != root:
+                parent.left = successor.right
+                successor.right = root.right
+
+            successor.left = root.left
+
+            return successor
 
         return root
-
-    def findMin(self, node):
-        while node.left:
-            node = node.left
-        return node
 ```
 
 ---
