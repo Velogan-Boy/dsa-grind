@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/kth-smallest-element-in-a-bst/submissions/1975188573/
+- **URL:** https://leetcode.com/problems/kth-smallest-element-in-a-bst/submissions/1975191986/
 - **Date:** 2026-04-11
 
 ## Solution
