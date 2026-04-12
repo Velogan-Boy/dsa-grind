@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/hand-of-straights/submissions/1976404334/
+- **URL:** https://leetcode.com/problems/hand-of-straights/submissions/1976405089/
 - **Date:** 2026-04-12
 
 ## Solution
@@ -11,22 +11,28 @@
 ```python
 class Solution:
     def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
-        if len(hand) % groupSize != 0:
-            return False
+            if len(hand) % groupSize != 0:
+                return False
 
-        count = Counter(hand)
-        hand.sort()
+            count = Counter(hand)
+            heap = list(count.keys())
+            heapq.heapify(heap)
 
-        for card in hand:
-            if count[card] == 0:
-                continue
+            while heap:
+                first = heap[0]
 
-            for i in range(groupSize):
-                if count[card + i] == 0:
-                    return False
-                count[card + i] -= 1
+                for i in range(groupSize):
+                    if count[first + i] == 0:
+                        return False
 
-        return True
+                    count[first + i] -= 1
+
+                    if count[first + i] == 0:
+                        if first + i != heap[0]:
+                            return False
+                        heapq.heappop(heap)
+
+            return True
 ```
 
 ---
