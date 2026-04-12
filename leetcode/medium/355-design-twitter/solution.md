@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/design-twitter/submissions/1976434535/
+- **URL:** https://leetcode.com/problems/design-twitter/
 - **Date:** 2026-04-12
 
 ## Solution
@@ -14,17 +14,16 @@ import heapq
 class Twitter(object):
     def __init__(self):
         self.timestamp = 0
-        self.user_tweets = {}
-        self.user_follows = {}
+        self.user_tweets = defaultdict(list)
+        self.user_follows = defaultdict(set)
     
     def postTweet(self, userId, tweetId):
-        if userId not in self.user_tweets:
-            self.user_tweets[userId] = []
         self.timestamp += 1
         self.user_tweets[userId].append((-self.timestamp, tweetId))
     
     def getNewsFeed(self, userId):
         heap = []
+
         if userId in self.user_tweets:
             heap.extend(self.user_tweets[userId][-10:])
 
@@ -33,15 +32,15 @@ class Twitter(object):
                 if followeeId in self.user_tweets:
                     heap.extend(self.user_tweets[followeeId][-10:])
                     
+
         heapq.heapify(heap)
         feed = []
+
         while heap and len(feed) < 10:
             feed.append(heapq.heappop(heap)[1])
         return feed
     
     def follow(self, followerId, followeeId):
-        if followerId not in self.user_follows:
-            self.user_follows[followerId] = set()
         if followerId != followeeId:
             self.user_follows[followerId].add(followeeId)
     
