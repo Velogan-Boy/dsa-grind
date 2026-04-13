@@ -3,31 +3,34 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/unique-paths-ii/submissions/1977554770/
+- **URL:** https://leetcode.com/problems/unique-paths-ii/submissions/1977561982/
 - **Date:** 2026-04-13
 
 ## Solution
 
 ```python
 class Solution:
-    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
-        m,n = len(obstacleGrid), len(obstacleGrid[0])
+    def uniquePathsWithObstacles(self, obstacleGrid):
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
 
-        memo = [[-1] * n for i in range(m)]
+        dp = [[0] * n for _ in range(m)]
 
-        def dfs(i,j):
-            if i < 0 or j < 0: return 0
-            if obstacleGrid[i][j]: return 0
-            if i == 0 and j == 0: return 1 
+        for i in range(m):
+            if obstacleGrid[i][0] == 1:
+                break
+            dp[i][0] = 1
 
-            if memo[i][j] != -1: return memo[i][j]
+        for j in range(n):
+            if obstacleGrid[0][j] == 1:
+                break
+            dp[0][j] = 1
 
-            memo[i][j] = dfs(i - 1, j) + dfs(i, j - 1)
+        for i in range(1, m):
+            for j in range(1, n):
+                if obstacleGrid[i][j] == 0:
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
 
-            return memo[i][j]
-
-        return dfs(m - 1, n - 1)
-        
+        return dp[m - 1][n - 1]
 ```
 
 ---
