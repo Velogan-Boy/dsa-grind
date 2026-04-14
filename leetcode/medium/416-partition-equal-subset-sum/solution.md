@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/partition-equal-subset-sum/submissions/1978057009/
+- **URL:** https://leetcode.com/problems/partition-equal-subset-sum/submissions/1978062182/
 - **Date:** 2026-04-14
 
 ## Solution
@@ -17,26 +17,26 @@ class Solution:
 
         target = totalSum // 2
 
-        memo = [[-1] * (target + 1) for _ in range(n)]
+        dp = [[False] * (target + 1) for _ in range(n)]
 
-        def dfs(i, target):
-            if memo[i][target] != -1: return memo[i][target]
+        for i in range(n):
+            dp[i][0] = True
 
-            if target < 0: return False
-            if target == 0: 
-                memo[i][target] = True
-                return memo[i][target]
+        if nums[0] <= target:
+            dp[0][nums[0]] = True
+        
+        for i in range(1, n):
+            for j in range(1, target + 1):
+                notPick = dp[i - 1][j]
 
-            if i < 0: return False
+                pick = False
+                if nums[i] <= j:
+                    pick = dp[i - 1][j - nums[i]]
 
-            pick = dfs(i - 1, target - nums[i])
-            notPick = dfs(i - 1, target)
+                dp[i][j] = pick or notPick
 
-            memo[i][target] =  pick or notPick
 
-            return memo[i][target]
-
-        return dfs(n - 1, target)
+        return dp[n - 1][target]
 
 ```
 
