@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-palindromic-subsequence/submissions/1979239549/
+- **URL:** https://leetcode.com/problems/longest-palindromic-subsequence/submissions/1979239834/
 - **Date:** 2026-04-15
 
 ## Solution
@@ -14,6 +14,7 @@ class Solution:
         return self.lcs(s, s[::-1])
 
 
+    @cache
     def lcs(self, str1, str2):
         m,n = len(str1), len(str2)
 
