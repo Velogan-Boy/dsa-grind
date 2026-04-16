@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/1980252973/
+- **URL:** https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/1980268654/
 - **Date:** 2026-04-16
 
 ## Solution
@@ -13,22 +13,17 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         n = len(prices)
 
-        memo = [[-1] * 2 for _ in range(n)]
+        dp = [[-1] * 2 for _ in range(n + 1)]
 
-        def dfs(day, buy):
-            if day == n: return 0
+        dp[n][1] = dp[n][0] = 0
 
-            if memo[day][buy] != -1: return memo[day][buy]
+        for day in range(n - 1, -1, -1):
+            dp[day][1] = max(-prices[day] + dp[day + 1][0], dp[day + 1][1])
+            dp[day][0] = max(prices[day] + dp[day + 1][1], dp[day + 1][0])
 
-            if buy:
-                memo[day][buy] = max(-prices[day] + dfs(day + 1, 0), dfs(day + 1, 1))
-            else:
-                memo[day][buy] = max(prices[day] + dfs(day + 1, 1), dfs(day + 1, 0))
-
-            return memo[day][buy]
+        return dp[0][1]
 
 
-        return dfs(0, 1)
 
 
 
