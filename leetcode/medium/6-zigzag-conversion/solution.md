@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/zigzag-conversion/submissions/1989495311/
+- **URL:** https://leetcode.com/problems/zigzag-conversion/submissions/1989497916/
 - **Date:** 2026-04-27
 
 ## Solution
@@ -14,20 +14,21 @@ class Solution:
         if numRows == 1:
             return s
 
-        res = ""
-        n = len(s)
-        increment = 2 * (numRows - 1)
+        rows = [""] * numRows
+        curr_row = 0
+        direction = 1  # 1 = down, -1 = up
 
-        for row in range(numRows):
-            for i in range(row, n, increment):
-                res += s[i]
+        for ch in s:
+            rows[curr_row] += ch
 
-                if row != 0 and row != numRows - 1:
-                    diag = i + increment - 2 * row
-                    if diag < n:
-                        res += s[diag]
+            if curr_row == 0:
+                direction = 1
+            elif curr_row == numRows - 1:
+                direction = -1
 
-        return res
+            curr_row += direction
+
+        return "".join(rows)
 ```
 
 ---
