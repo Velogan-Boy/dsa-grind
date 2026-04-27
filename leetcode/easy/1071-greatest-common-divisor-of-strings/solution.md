@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/greatest-common-divisor-of-strings/submissions/1989536031/
+- **URL:** https://leetcode.com/problems/greatest-common-divisor-of-strings/submissions/1989536206/
 - **Date:** 2026-04-27
 
 ## Solution
