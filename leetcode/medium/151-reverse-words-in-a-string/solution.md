@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/reverse-words-in-a-string/
+- **URL:** https://leetcode.com/problems/reverse-words-in-a-string/submissions/1990462307/
 - **Date:** 2026-04-28
 
 ## Solution
@@ -15,19 +15,17 @@ class Solution:
 
         while i < n:
             while i < n and s[i] == ' ': i+=1
-            if i >= n: break
-
-            j = i + 1
+            j = i
             while j < n and s[j] != ' ': j+=1
 
-            if ans:
-                ans = s[i:j] + ' ' + ans
-            else:
-                ans = s[i:j]
+            w = s[i:j]
 
-            i = j + 1
+            if w:
+                ans = w + ' ' + ans
+                
+            i = j
 
-        return ans
+        return ans.strip()
 
 
 
