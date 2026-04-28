@@ -3,24 +3,22 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/submissions/1990412340/
+- **URL:** https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 - **Date:** 2026-04-28
 
 ## Solution
 
 ```python
 class Solution:
-    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+    def kidsWithCandies(self, candies, extraCandies):
 
-        maxCandy = max(candies)
-        res = [False] * len(candies)
+        result = []
+        maxVal = max(candies)
 
-        for i, candy in enumerate(candies):
-            if candy + extraCandies >= maxCandy:
-                res[i] = True
-        
-        return res
-        
+        for c in candies:
+            result.append(c + extraCandies >= maxVal)
+
+        return result
 ```
 
 ---
