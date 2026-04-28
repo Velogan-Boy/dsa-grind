@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/can-place-flowers/submissions/1990431738/
+- **URL:** https://leetcode.com/problems/can-place-flowers/submissions/1990433651/
 - **Date:** 2026-04-28
 
 ## Solution
