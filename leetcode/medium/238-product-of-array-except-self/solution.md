@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/product-of-array-except-self/submissions/1991265025/
+- **URL:** https://leetcode.com/problems/product-of-array-except-self/submissions/1991265831/
 - **Date:** 2026-04-29
 
 ## Solution
@@ -11,18 +11,21 @@
 ```python
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        product = math.prod(nums)
-        result = []
-        if product == 1:
-            return nums
-        elif product != 0:
-            for i in range(len(nums)):
-                result.append(product//nums[i])
-            return result
-        else:
-            for i in range(len(nums)):
-                result.append(math.prod(nums[:i]+nums[i+1:]))
-            return result
+        n = len(nums)
+        prefix = [1] * n
+        suffix = [1] * n
+        ans = [1] * n
+
+        for i in range(1, n):
+            prefix[i] = prefix[i-1] * nums[i-1]
+
+        for i in range(n-2, -1, -1):
+            suffix[i] = suffix[i+1] * nums[i+1]
+
+        for i in range(n):
+            ans[i] = prefix[i] * suffix[i]
+
+        return ans
 ```
 
 ---
