@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/is-subsequence/submissions/1991266472/
+- **URL:** https://leetcode.com/problems/is-subsequence/submissions/1991266864/
 - **Date:** 2026-04-29
 
 ## Solution
