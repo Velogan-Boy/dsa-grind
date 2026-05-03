@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/move-zeroes/submissions/1994148186/
+- **URL:** https://leetcode.com/problems/move-zeroes/submissions/1994149749/
 - **Date:** 2026-05-03
 
 ## Solution
