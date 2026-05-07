@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Hard
-- **URL:** https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/1997640818/
+- **URL:** https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/1997644731/
 - **Date:** 2026-05-07
 
 ## Solution
@@ -23,15 +23,14 @@ class Solution:
         high = n1
         
         while low <= high:
-            mid1 = (low + high) // 2 # Calculate mid index for nums1
-            mid2 = left - mid1 # Calculate mid index for nums2
+            mid1 = (low + high) // 2 
+            mid2 = left - mid1 
             
             l1 = float('-inf')
             l2 = float('-inf')
             r1 = float('inf')
             r2 = float('inf')
             
-            # Determine values of l1, l2, r1, and r2
             if mid1 < n1:
                 r1 = nums1[mid1]
             if mid2 < n2:
@@ -42,19 +41,16 @@ class Solution:
                 l2 = nums2[mid2 - 1]
             
             if l1 <= r2 and l2 <= r1:
-                # The partition is correct, we found the median
                 if n % 2 == 1:
                     return max(l1, l2)
                 else:
                     return (max(l1, l2) + min(r1, r2)) / 2.0
             elif l1 > r2:
-                # Move towards the left side of nums1
                 high = mid1 - 1
             else:
-                # Move towards the right side of nums1
                 low = mid1 + 1
         
-        return 0 # If the code reaches here, the input arrays were not sorted.
+        return 0 
 ```
 
 ---
