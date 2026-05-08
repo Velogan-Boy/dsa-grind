@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/valid-parentheses/submissions/1956059068/
-- **Date:** 2026-03-22
+- **URL:** https://leetcode.com/problems/valid-parentheses/submissions/1998354052/
+- **Date:** 2026-05-08
 
 ## Solution
 
