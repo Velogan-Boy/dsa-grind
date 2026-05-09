@@ -3,31 +3,35 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Hard
-- **URL:** https://leetcode.com/problems/trapping-rain-water/submissions/1999100853/
+- **URL:** https://leetcode.com/problems/trapping-rain-water/submissions/1999101681/
 - **Date:** 2026-05-09
 
 ## Solution
 
 ```python
 class Solution:
-    def trap(self, height: List[int]) -> int:
-        if not height:
-            return 0
+    def trap(self, height):
 
-        l, r = 0, len(height) - 1
-        leftMax, rightMax = height[l], height[r]
-        res = 0
+        l = 0
+        r = len(height) - 1
+
+        leftMax = 0
+        rightMax = 0
+        totalWater = 0
+
         while l < r:
-            if leftMax < rightMax:
-                l += 1
-                leftMax = max(leftMax, height[l])
-                res += leftMax - height[l]
-            else:
-                r -= 1
-                rightMax = max(rightMax, height[r])
-                res += rightMax - height[r]
-        return res
 
+            leftMax = max(leftMax, height[l])
+            rightMax = max(rightMax, height[r])
+
+            if leftMax < rightMax:
+                totalWater += leftMax - height[l]
+                l += 1
+            else:
+                totalWater += rightMax - height[r]
+                r -= 1
+
+        return totalWater
 ```
 
 ---
