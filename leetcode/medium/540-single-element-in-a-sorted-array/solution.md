@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/single-element-in-a-sorted-array/
+- **URL:** https://leetcode.com/problems/single-element-in-a-sorted-array/submissions/1998659563/
 - **Date:** 2026-05-09
 
 ## Solution
