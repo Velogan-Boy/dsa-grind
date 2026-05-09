@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/koko-eating-bananas/submissions/1998735151/
+- **URL:** https://leetcode.com/problems/koko-eating-bananas/submissions/1998735985/
 - **Date:** 2026-05-09
 
 ## Solution
@@ -11,10 +11,8 @@
 ```python
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        piles.sort()
-
         low = 1
-        high = piles[-1]
+        high = max(piles)
 
         def reqHours(k):
             hoursTaken = 0
@@ -25,15 +23,14 @@ class Solution:
             
 
         while low <= high:
-            mid = (low + high) // 2
+            k = (low + high) // 2
 
-            if reqHours(mid) <= h:
-                ans = mid
-                high = mid - 1
+            if reqHours(k) <= h:
+                high = k - 1
             else:
-                low = mid + 1
+                low = k + 1
         
-        return ans
+        return low
 
 
 
