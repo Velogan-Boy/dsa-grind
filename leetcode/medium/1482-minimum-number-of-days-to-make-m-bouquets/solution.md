@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/submissions/1938795378/
-- **Date:** 2026-03-05
+- **URL:** https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/submissions/1998754733/
+- **Date:** 2026-05-09
 
 ## Solution
 
