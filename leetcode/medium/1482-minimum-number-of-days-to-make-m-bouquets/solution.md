@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/submissions/1998754733/
+- **URL:** https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
 - **Date:** 2026-05-09
 
 ## Solution
@@ -11,7 +11,8 @@
 ```python
 class Solution:
     def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
-        if len(bloomDay) < k * m:
+        n = len(bloomDay)
+        if n < k * m:
             return -1
 
         s = min(bloomDay)
@@ -22,7 +23,7 @@ class Solution:
 
             cnt = 0
             boquet = 0
-            for i in range(len(bloomDay)):
+            for i in range(n):
                 if bloomDay[i] <= x:
                     cnt += 1
                 else:
