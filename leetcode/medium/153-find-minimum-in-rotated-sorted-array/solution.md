@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/1998640609/
+- **URL:** https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/submissions/1998642594/
 - **Date:** 2026-05-09
 
 ## Solution
