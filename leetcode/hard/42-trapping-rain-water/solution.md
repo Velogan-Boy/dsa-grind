@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Hard
-- **URL:** https://leetcode.com/problems/trapping-rain-water/submissions/1999101681/
+- **URL:** https://leetcode.com/problems/trapping-rain-water/description/
 - **Date:** 2026-05-09
 
 ## Solution
