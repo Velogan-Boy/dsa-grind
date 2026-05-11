@@ -15,15 +15,19 @@ from collections import defaultdict
 class Solution:
     def majorityElement(self, nums):
 
-        hashMap = defaultdict(int)
-        n = len(nums)
+        cnt = 1
+        element = nums[0]
 
-        for num in nums:
-            hashMap[num]+=1
-
-            if hashMap[num] > n // 2: 
-                return num
+        for i in range(1, len(nums)):
+            if nums[i] == element:
+                cnt+=1
+            else:
+                if cnt > 0: cnt -= 1
+                else:
+                    element = nums[i]
+                    cnt = 1
         
+        return element
      
 
             
