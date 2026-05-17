@@ -3,27 +3,30 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/maximum-sum-circular-subarray/submissions/1999695127/
-- **Date:** 2026-05-10
+- **URL:** https://leetcode.com/problems/maximum-sum-circular-subarray/submissions/
+- **Date:** 2026-05-17
 
 ## Solution
 
 ```python
 class Solution:
     def maxSubarraySumCircular(self, nums: List[int]) -> int:
-        globMax, globMin = nums[0], nums[0]
-        curMax, curMin = 0, 0
-        total = 0
-        
-        for i, n in enumerate(nums):
-            curMax = max(curMax + n, n)
-            curMin = min(curMin + n, n)
-            total += n
-            globMax = max(curMax, globMax)
-            globMin = min(curMin, globMin)
+        total = sum(nums)
 
-        return max(globMax, total - globMin) if globMax > 0 else globMax
+        currMax = globalMax = nums[0]
+        currMin = globalMin = nums[0]
 
+        for num in nums[1:]:
+            currMax = max(num, currMax + num)
+            globalMax = max(globalMax, currMax)
+
+            currMin = min(num, currMin + num)
+            globalMin = min(globalMin, currMin)
+
+        if globalMax < 0:
+            return globalMax
+
+        return max(globalMax, total - globalMin)
 ```
 
 ---
