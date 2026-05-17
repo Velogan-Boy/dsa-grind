@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/maximum-sum-circular-subarray/submissions/
+- **URL:** https://leetcode.com/problems/maximum-sum-circular-subarray/submissions/2005434185/
 - **Date:** 2026-05-17
 
 ## Solution
