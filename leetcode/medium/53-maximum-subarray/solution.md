@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/maximum-subarray/submissions/1999684116/
-- **Date:** 2026-05-10
+- **URL:** https://leetcode.com/problems/maximum-subarray/submissions/2005422444/
+- **Date:** 2026-05-17
 
 ## Solution
 
