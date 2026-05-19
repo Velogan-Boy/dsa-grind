@@ -3,29 +3,28 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/valid-parentheses/submissions/1998354052/
-- **Date:** 2026-05-08
+- **URL:** https://leetcode.com/problems/valid-parentheses/submissions/2007381736/
+- **Date:** 2026-05-19
 
 ## Solution
 
 ```python
 class Solution:
     def isValid(self, s: str) -> bool:
-        bracketMap = {")": "(", "]": "[", "}": "{"}
+
+        hashMap = {'}': '{', ')': '(', ']':'['}
         stack = []
 
-        for c in s:
-            if c not in bracketMap:
-                stack.append(c)
-                continue
-
-            if not stack or stack[-1] != bracketMap[c]:
-                return False
-                
-            stack.pop()
+        for ch in s:
+            if stack and ch in hashMap and stack[-1] == hashMap[ch]:
+                stack.pop()
+            else:
+                stack.append(ch)
 
         return not stack
+            
 
+        
 ```
 
 ---
