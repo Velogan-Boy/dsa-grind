@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/reorder-list/
+- **URL:** https://leetcode.com/problems/reorder-list/submissions/2008331478/
 - **Date:** 2026-05-20
 
 ## Solution
@@ -18,67 +18,28 @@
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
 
-        def copyList(head):
-            dummy = ListNode()
-            curr = dummy
-            p = head
+        arr = []
 
-            while p:
-                curr.next = ListNode(p.val)
-                curr = curr.next
-                p = p.next
-
-            return dummy.next
-
-        def reverseList(head):
-            if not head or not head.next:
-                return head
-
-            prev = None
-            curr = head
-
-            while curr:
-                temp = curr.next
-                curr.next = prev
-                prev = curr
-                curr = temp
-
-            return prev
-
-        if not head or not head.next:
-            return
-
-        list1 = head
-        list2 = reverseList(copyList(head))
-
-        n = 0
         p = head
         while p:
-            n += 1
+            arr.append(p)
             p = p.next
 
-        dummy = ListNode()
-        tail = dummy
-        used = 0
+        i, j = 0, len(arr) - 1
+        while i < j:
+            arr[i].next = arr[j]
+            i+=1
 
-        while used < n:
-            tail.next = list1
-            tail = tail.next
-            list1 = list1.next
-            used += 1
+            if i == j: break
 
-            if used == n:
-                break
+            arr[j].next = arr[i]
+            j-=1
+        
+        arr[i].next = None
 
-            tail.next = list2
-            tail = tail.next
-            list2 = list2.next
-            used += 1
+        return head
 
-        tail.next = None
 
-        head.val = dummy.next.val
-        head.next = dummy.next.next
 ```
 
 ---
