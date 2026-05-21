@@ -3,28 +3,32 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/1970452223/
-- **Date:** 2026-04-06
+- **URL:** https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/2009288255/
+- **Date:** 2026-05-21
 
 ## Solution
 
 ```python
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-
-        def helper(node):
-            if not node: return 0
-
-            return max(helper(node.left), helper(node.right)) + 1
-
-        return helper(root)
+        if not root:
+            return 0
         
+        q = deque()
+        q.append(root)
+        depth = 0
+        
+        while q:
+            depth += 1
+            
+            for _ in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+        
+        return depth        
 ```
 
 ---
