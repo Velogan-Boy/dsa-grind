@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/reverse-bits/submissions/2009701025/
+- **URL:** https://leetcode.com/problems/reverse-bits/submissions/2009702053/
 - **Date:** 2026-05-22
 
 ## Solution
@@ -16,7 +16,7 @@ class Solution:
 
         for i in range(32):
             bit = (n >> i) & 1
-            res += (bit << (31 - i))
+            res = res | (bit << (31 - i))
 
         return res
 
