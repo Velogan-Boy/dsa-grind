@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/reverse-bits/submissions/2009702053/
+- **URL:** https://leetcode.com/problems/reverse-bits/submissions/2009702204/
 - **Date:** 2026-05-22
 
 ## Solution
