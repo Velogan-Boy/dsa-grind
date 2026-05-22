@@ -3,28 +3,29 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/top-k-frequent-elements/submissions/2008364699/
-- **Date:** 2026-05-20
+- **URL:** https://leetcode.com/problems/top-k-frequent-elements/submissions/2009709735/
+- **Date:** 2026-05-22
 
 ## Solution
 
 ```python
+import heapq
+
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-
-        freq = defaultdict(int)
-
+    """My Own Min-Heap Solution!!!"""
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+        occur = {}
         for num in nums:
-            freq[num] += 1
+            occur[num] = occur.get(num, 0) + 1
 
-        sortedNums = sorted(freq.keys(), key = lambda x: freq[x], reverse=True)
+        heap = []
 
-        return sortedNums[:k]
+        for key in occur:
+            heapq.heappush(heap, (occur[key], key))
+            if len(heap) > k:
+                heapq.heappop(heap)
 
-
-
-        
-
+        return [i[1] for i in heap]
 ```
 
 ---
