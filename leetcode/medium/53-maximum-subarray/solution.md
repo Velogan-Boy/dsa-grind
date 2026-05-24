@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/maximum-subarray/submissions/2005422444/
-- **Date:** 2026-05-17
+- **URL:** https://leetcode.com/problems/maximum-subarray/submissions/2011781701/
+- **Date:** 2026-05-24
 
 ## Solution
 
@@ -15,6 +15,7 @@ class Solution:
 
         currSum = 0
         maxSum = -inf
+        
         for num in nums:
             currSum += num
             maxSum = max(maxSum, currSum)
