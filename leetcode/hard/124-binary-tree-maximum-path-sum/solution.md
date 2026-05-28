@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Hard
-- **URL:** https://leetcode.com/problems/binary-tree-maximum-path-sum/submissions/1970495927/
-- **Date:** 2026-04-06
+- **URL:** https://leetcode.com/problems/binary-tree-maximum-path-sum/submissions/2015755190/
+- **Date:** 2026-05-28
 
 ## Solution
 
@@ -15,25 +15,28 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
 
-        def helper(node, maxPathSum):
-            if not node: return 0
+        globalMax = float('-inf')
 
-            left = max(0, helper(node.left, maxPathSum))
-            right = max(0, helper(node.right, maxPathSum))
+        def dfs(node):
+            nonlocal globalMax
 
-            maxPathSum[0] = max(maxPathSum[0], left + right + node.val)
+            if not node:
+                return 0
 
-            return max(left,right) + node.val
+            l = max(0, dfs(node.left))
+            r = max(0, dfs(node.right))
 
-        maxPathSum = [-inf]
-        helper(root,maxPathSum)
+            globalMax = max(globalMax, l + r + node.val)
 
-        return maxPathSum[0]
-        
-        
+            return node.val + max(l, r)
+
+        dfs(root)
+
+        return globalMax
 ```
 
 ---
