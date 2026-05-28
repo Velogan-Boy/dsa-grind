@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/house-robber-ii/submissions/1977300748/
-- **Date:** 2026-04-13
+- **URL:** https://leetcode.com/problems/house-robber-ii/submissions/2015799844/
+- **Date:** 2026-05-28
 
 ## Solution
 
