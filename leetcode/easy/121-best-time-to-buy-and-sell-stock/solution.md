@@ -3,28 +3,24 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/1980222287/
-- **Date:** 2026-04-16
+- **URL:** https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/2015798842/
+- **Date:** 2026-05-28
 
 ## Solution
 
 ```python
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        n = len(prices)
 
-        maxProfit = 0
-        minimum = prices[0]
-
-        for i in range(1, n):
-            profit = prices[i] - minimum
-            maxProfit = max(maxProfit, profit)
-
-            minimum = min(prices[i], minimum)
+        minPrice = float('inf')
+        maxProfit = float('-inf')
+        for price in prices:
+            if price < minPrice:
+                minPrice = price
+            
+            maxProfit = max(maxProfit, price - minPrice)
 
         return maxProfit
-            
-
 
         
 ```
