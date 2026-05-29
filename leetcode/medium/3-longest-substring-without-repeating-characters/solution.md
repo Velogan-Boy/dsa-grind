@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/1997464912/
-- **Date:** 2026-05-07
+- **URL:** https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/2016617954/
+- **Date:** 2026-05-29
 
 ## Solution
 
@@ -22,8 +22,6 @@ class Solution:
             hashMap[s[j]] = j
             ans = max(ans, j - i + 1)
             j+=1
-
-            
 
         return ans
 
