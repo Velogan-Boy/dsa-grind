@@ -3,57 +3,53 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/rotting-oranges/submissions/1992720266/
-- **Date:** 2026-05-01
+- **URL:** https://leetcode.com/problems/rotting-oranges/submissions/2016683333/
+- **Date:** 2026-05-29
 
 ## Solution
 
 ```python
-from collections import deque
-
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        rows = len(grid)
-        if rows == 0: 
-            return -1
-        
-        cols = len(grid[0])
-        
-        fresh_cnt = 0
-        
-        rotten = deque()
-        
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == 2:
-                    rotten.append((r, c))
-                elif grid[r][c] == 1:
-                    fresh_cnt += 1
-        
-        minutes_passed = 0
-        
-        while rotten and fresh_cnt > 0:
 
-            minutes_passed += 1
-            
-            for _ in range(len(rotten)):
-                x, y = rotten.popleft()
+        m, n = len(grid), len(grid[0])
+        q = deque()
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 2:
+                    q.append((i, j))
+        
+
+        ans = -1
+        while q:
+            size = len(q)
+            ans += 1
+
+            for _ in range(size):
+                x, y = q.popleft()
                 
-                for dx, dy in [(1,0), (-1,0), (0,1), (0,-1)]:
+                for dx, dy in [(-1,0), (0,-1), (1,0), (0,1)]:
                     xx, yy = x + dx, y + dy
-                    if xx < 0 or xx == rows or yy < 0 or yy == cols:
-                        continue
 
-                    if grid[xx][yy] == 0 or grid[xx][yy] == 2:
-                        continue
-                        
-                    fresh_cnt -= 1
-                    grid[xx][yy] = 2
-                    
-                    rotten.append((xx, yy))
+                    if xx >= 0 and xx < m and yy >= 0 and yy < n and grid[xx][yy] == 1:
+                        grid[xx][yy] = 2
+                        q.append((xx, yy))
+
+            
+            
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    return -1
+
+
+
+        return max(ans, 0)
+
+
 
         
-        return minutes_passed if fresh_cnt == 0 else -1
 ```
 
 ---
