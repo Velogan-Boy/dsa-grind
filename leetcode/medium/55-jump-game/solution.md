@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/jump-game/submissions/1966106110/
-- **Date:** 2026-04-01
+- **URL:** https://leetcode.com/problems/jump-game/submissions/2017497226/
+- **Date:** 2026-05-30
 
 ## Solution
 
