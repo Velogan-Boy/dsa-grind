@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/subtree-of-another-tree/submissions/2017512522/
+- **URL:** https://leetcode.com/problems/subtree-of-another-tree/solutions/
 - **Date:** 2026-05-30
 
 ## Solution
