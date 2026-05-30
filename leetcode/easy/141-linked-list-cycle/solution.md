@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/linked-list-cycle/submissions/1942018761/
+- **URL:** https://leetcode.com/problems/linked-list-cycle/submissions/2017493913/
 - **Date:** 2026-05-30
 
 ## Solution
@@ -23,7 +23,7 @@ class Solution:
 
         slow, fast = node, node.next
 
-        while fast.next and slow != fast:
+        while fast and fast.next and slow != fast:
             fast = fast.next.next
             slow = slow.next
 
