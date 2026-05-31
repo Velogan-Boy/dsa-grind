@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/interleaving-string/submissions/2018378450/
+- **URL:** https://leetcode.com/problems/interleaving-string/submissions/2018380114/
 - **Date:** 2026-05-31
 
 ## Solution
