@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/interleaving-string/submissions/2018377908/
+- **URL:** https://leetcode.com/problems/interleaving-string/submissions/2018378450/
 - **Date:** 2026-05-31
 
 ## Solution
@@ -12,33 +12,39 @@
 class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
 
-        if len(s1) + len(s2) != len(s3):
+        m, n = len(s1), len(s2)
+
+        if m + n != len(s3):
             return False
 
-        memo = {}
+        dp = [[False] * (n + 1) for _ in range(m + 1)]
 
-        def dfs(i, j):
+        dp[0][0] = True
 
-            if (i, j) in memo:
-                return memo[(i, j)]
+        for i in range(1, m + 1):
+            dp[i][0] = (
+                dp[i - 1][0]
+                and s1[i - 1] == s3[i - 1]
+            )
 
-            if i == len(s1) and j == len(s2):
-                return True
+        for j in range(1, n + 1):
+            dp[0][j] = (
+                dp[0][j - 1]
+                and s2[j - 1] == s3[j - 1]
+            )
 
-            k = i + j
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
 
-            ans = False
+                dp[i][j] = (
+                    dp[i - 1][j]
+                    and s1[i - 1] == s3[i + j - 1]
+                ) or (
+                    dp[i][j - 1]
+                    and s2[j - 1] == s3[i + j - 1]
+                )
 
-            if i < len(s1) and s1[i] == s3[k]:
-                ans = dfs(i + 1, j)
-
-            if not ans and j < len(s2) and s2[j] == s3[k]:
-                ans = dfs(i, j + 1)
-
-            memo[(i, j)] = ans
-            return ans
-
-        return dfs(0, 0)
+        return dp[m][n]
 ```
 
 ---
