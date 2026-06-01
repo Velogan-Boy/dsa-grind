@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-increasing-subsequence/submissions/2019422332/
+- **URL:** https://leetcode.com/problems/longest-increasing-subsequence/submissions/2019425898/
 - **Date:** 2026-06-01
 
 ## Solution
