@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/coin-change/
+- **URL:** https://leetcode.com/problems/coin-change/submissions/2020387257/
 - **Date:** 2026-06-02
 
 ## Solution
