@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/decode-ways/submissions/2019980705/
+- **URL:** https://leetcode.com/problems/decode-ways/submissions/2019985166/
 - **Date:** 2026-06-02
 
 ## Solution
