@@ -4,29 +4,34 @@
 - **Platform:** Leetcode
 - **Difficulty:** Medium
 - **URL:** https://leetcode.com/problems/maximum-product-subarray/
-- **Date:** 2026-05-17
+- **Date:** 2026-06-03
 
 ## Solution
 
 ```python
 class Solution:
-    def maxProduct(self, nums):
-        ans = nums[0]
-        maxProd = nums[0]
-        minProd = nums[0]
+    def maxProduct(self, arr):
+        n = len(arr)
 
-        for i in range(1, len(nums)):
-            curr = nums[i]
+        pre, suff = 1, 1
 
-            if curr < 0:
-                maxProd, minProd = minProd, maxProd
+        ans = float('-inf')
 
-            maxProd = max(curr, maxProd * curr)
-            minProd = min(curr, minProd * curr)
+        for i in range(n):
+            if pre == 0:
+                pre = 1
 
-            ans = max(ans, maxProd)
+            if suff == 0:
+                suff = 1
+
+            pre *= arr[i]
+
+            suff *= arr[n - i - 1]
+
+            ans = max(ans, pre, suff)
 
         return ans
+
 ```
 
 ---
