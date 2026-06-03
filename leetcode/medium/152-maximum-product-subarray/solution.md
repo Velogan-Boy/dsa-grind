@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/maximum-product-subarray/
+- **URL:** https://leetcode.com/problems/maximum-product-subarray/submissions/2021593118/
 - **Date:** 2026-06-03
 
 ## Solution
