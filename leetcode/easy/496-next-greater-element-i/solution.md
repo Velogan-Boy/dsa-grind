@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/next-greater-element-i/submissions/1956598451/
-- **Date:** 2026-03-23
+- **URL:** https://leetcode.com/problems/next-greater-element-i/submissions/2051530583/
+- **Date:** 2026-06-30
 
 ## Solution
 
@@ -12,31 +12,24 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
 
-        n = len(nums2)
         stack = []
-        ans = [-1] * n
-        hashMap = {}
+        nextGreater = {}
 
-        for i in range(n - 1, -1, -1):
-            hashMap[nums2[i]] = i
+        for i in range(len(nums2) - 1, -1, -1):
 
             while stack and stack[-1] <= nums2[i]:
                 stack.pop()
 
-            if stack:
-                ans[i] = stack[-1]
-            
+            nextGreater[nums2[i]] = stack[-1] if stack else -1
+
             stack.append(nums2[i])
 
-        res = []
+        ans = []
+
         for num in nums1:
-            res.append(ans[hashMap[num]])
+            ans.append(nextGreater[num])
 
-        return res
-
-
-
-     
+        return ans
 ```
 
 ---
