@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/next-greater-element-ii/
+- **URL:** https://leetcode.com/problems/next-greater-element-ii/submissions/2052651108/
 - **Date:** 2026-07-01
 
 ## Solution
@@ -11,7 +11,6 @@
 ```python
 class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
-
         n = len(nums)
         nge = [-1] * n
         stack = []
