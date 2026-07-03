@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/3sum/submissions/1998346598/
-- **Date:** 2026-05-08
+- **URL:** https://leetcode.com/problems/3sum/submissions/2054985655/
+- **Date:** 2026-07-03
 
 ## Solution
 
