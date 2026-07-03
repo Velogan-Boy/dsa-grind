@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-repeating-character-replacement/submissions/1960004178/
-- **Date:** 2026-03-26
+- **URL:** https://leetcode.com/problems/longest-repeating-character-replacement/submissions/2054996106/
+- **Date:** 2026-07-03
 
 ## Solution
 
