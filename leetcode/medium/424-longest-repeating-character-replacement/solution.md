@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-repeating-character-replacement/submissions/2054996106/
+- **URL:** https://leetcode.com/problems/longest-repeating-character-replacement/submissions/2055000584/
 - **Date:** 2026-07-03
 
 ## Solution
@@ -23,7 +23,6 @@ class Solution:
 
             if r - l + 1 - maxF > k:
                 hm[s[l]] = hm[s[l]] - 1
-                maxF = max(maxF, hm[s[l]])
                 l+=1
             
             maxLength = max(r - l + 1, maxLength)
