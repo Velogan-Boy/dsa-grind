@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Hard
-- **URL:** https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/1957117099/
-- **Date:** 2026-03-23
+- **URL:** https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/2056140497/
+- **Date:** 2026-07-04
 
 ## Solution
 
