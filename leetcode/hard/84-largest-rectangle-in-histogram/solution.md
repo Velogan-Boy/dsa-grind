@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Hard
-- **URL:** https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/2056140497/
+- **URL:** https://leetcode.com/problems/largest-rectangle-in-histogram/submissions/2056141617/
 - **Date:** 2026-07-04
 
 ## Solution
@@ -16,7 +16,7 @@ class Solution:
         st = []
         
         for i in range(n - 1, -1, -1):
-            currEle = arr[i]
+   
             while st and arr[st[-1]] >= arr[i]:
                 st.pop()
             
@@ -31,7 +31,7 @@ class Solution:
         ans = [0] * n
         st = []
         for i in range(n):
-            currEle = arr[i]
+  
             while st and arr[st[-1]] >= arr[i]:
                 st.pop()
             ans[i] = st[-1] if st else -1
