@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/top-k-frequent-elements/submissions/2058450911/
+- **URL:** https://leetcode.com/problems/top-k-frequent-elements/
 - **Date:** 2026-07-06
 
 ## Solution
