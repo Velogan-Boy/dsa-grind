@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/top-k-frequent-elements/submissions/2009709735/
-- **Date:** 2026-05-22
+- **URL:** https://leetcode.com/problems/top-k-frequent-elements/submissions/2058450911/
+- **Date:** 2026-07-06
 
 ## Solution
 
@@ -12,7 +12,6 @@
 import heapq
 
 class Solution:
-    """My Own Min-Heap Solution!!!"""
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         occur = {}
         for num in nums:
