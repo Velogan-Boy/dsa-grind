@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/search-in-rotated-sorted-array-ii/submissions/1998637619/
-- **Date:** 2026-05-09
+- **URL:** https://leetcode.com/problems/search-in-rotated-sorted-array-ii/submissions/2058464734/
+- **Date:** 2026-07-06
 
 ## Solution
 
