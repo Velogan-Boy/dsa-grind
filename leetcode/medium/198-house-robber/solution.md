@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/house-robber/
+- **URL:** https://leetcode.com/problems/house-robber/submissions/2058116404/
 - **Date:** 2026-07-06
 
 ## Solution
