@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/spiral-matrix/submissions/2000698170/
-- **Date:** 2026-05-11
+- **URL:** https://leetcode.com/problems/spiral-matrix/submissions/2065068651/
+- **Date:** 2026-07-12
 
 ## Solution
 
