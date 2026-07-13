@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/lru-cache/submissions/2066401834/
+- **URL:** https://leetcode.com/problems/lru-cache/submissions/2066402489/
 - **Date:** 2026-07-13
 
 ## Solution
