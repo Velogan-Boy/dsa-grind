@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/2074906976/
+- **URL:** https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/2074908568/
 - **Date:** 2026-07-20
 
 ## Solution
