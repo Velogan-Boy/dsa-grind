@@ -3,33 +3,26 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/2016630538/
-- **Date:** 2026-05-29
+- **URL:** https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/2074901347/
+- **Date:** 2026-07-20
 
 ## Solution
 
 ```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        i, j = 0, 0
-        n = len(s)
-        hashMap = {}
+        hm = {}
+        i = 0
         ans = 0
 
-        while j < n:
-            if s[j] in hashMap:
-                i = max(hashMap[s[j]] + 1, i)
-            
-            hashMap[s[j]] = j
+        for j in range(len(s)):
+            if s[j] in hm:
+                i = max(i, hm[s[j]] + 1)
+
+            hm[s[j]] = j
             ans = max(ans, j - i + 1)
-            j+=1
 
         return ans
-
-            
-
-
-        
 ```
 
 ---
