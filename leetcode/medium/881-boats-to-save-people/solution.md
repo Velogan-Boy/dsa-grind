@@ -3,8 +3,8 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/boats-to-save-people/submissions/2085092144/
-- **Date:** 2026-07-28
+- **URL:** https://leetcode.com/problems/boats-to-save-people/submissions/2086169531/
+- **Date:** 2026-07-29
 
 ## Solution
 
