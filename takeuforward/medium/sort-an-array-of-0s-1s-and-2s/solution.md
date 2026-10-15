@@ -11,18 +11,24 @@
 ```python
 class Solution:
     def sortZeroOneTwo(self, nums):
-        freq = [0] * 3
+        n = len(nums)
         
-        for num in nums:
-            freq[num] += 1
-        
-        i = 0
-        for num in range(3):
-            count = freq[num]
-            while count > 0:
-                nums[i] = num
+        i, j, k = 0, 0, n - 1
+
+        while j <= k:
+            if nums[j] == 0:
+                nums[i], nums[j] = nums[j], nums[i]
                 i += 1
-                count -= 1
+                j += 1
+
+            elif nums[j] == 2:
+                nums[k], nums[j] = nums[j], nums[k]
+                k -= 1
+
+            else:  # nums[j] == 1
+                j += 1
+
+        return nums
 ```
 
 ---
