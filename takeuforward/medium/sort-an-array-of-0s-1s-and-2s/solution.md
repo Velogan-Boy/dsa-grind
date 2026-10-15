@@ -12,7 +12,7 @@
 class Solution:
     def sortZeroOneTwo(self, nums):
         n = len(nums)
-        
+
         i, j, k = 0, 0, n - 1
 
         while j <= k:
@@ -25,7 +25,7 @@ class Solution:
                 nums[k], nums[j] = nums[j], nums[k]
                 k -= 1
 
-            else:  # nums[j] == 1
+            else:  
                 j += 1
 
         return nums
